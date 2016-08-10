@@ -22,10 +22,10 @@ public class Groupe {
     private Student[] students = new Student[10];
     int i = 0;
 
-
     public Groupe(String name, Student student) {
         this.name = name;
         this.students[i++] = student;
     }
+
 
 }

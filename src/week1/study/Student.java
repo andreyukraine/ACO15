@@ -22,30 +22,48 @@ public class Student {
 
     private String name;
     private String address;
-    private Subject subject;
+    private Subject[]subjects = new Subject[10];
+    int i = 0;
 
-    public void addStudent(String name, String address, Subject subject) {
 
+    public Student(String name, String address) {
         this.name = name;
         this.address = address;
-        this.subject = subject;
     }
+
+
 
     public void Study(Student student){
         if (student !=null){
-            System.out.println("Студент учит предмет" + subject);
+            for (int i = 0; i < subjects.length; i++) {
+                if (student.getSubjects()[i] == subjects[i]){
+                    System.out.println("Студент учит предмет " + subjects[i].getName());
+                }
+            }
+
         }
     }
 
-    public void addSubject(String name, int countHoursSemester){
-
+    public void addSubject(Subject subject){
+        subjects[i++] = subject;
     }
 
     public void removeSubjectLast(){
+        for (int j = subjects.length - 1; j > 1 ; j--) {
+            if (subjects[j] != null) {
+                subjects[j].setName(null);
+                break;
+            }
 
+        }
     }
 
     public void getAverageScoreSubjects(){
+        for (int j = 0; j < subjects.length; j++) {
+            if (subjects[j] != null){
+                System.out.println(String.format("предмет: %s, количество часов в семестре : %s", subjects[j].getName(), subjects[j].getCountHoursSemester()));
+            }
+        }
 
     }
 
@@ -65,11 +83,12 @@ public class Student {
         this.address = address;
     }
 
-    public Subject getSubject() {
-        return subject;
+    public Subject[] getSubjects() {
+        return subjects;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public void setSubjects(Subject[] subjects) {
+        this.subjects = subjects;
     }
+
 }

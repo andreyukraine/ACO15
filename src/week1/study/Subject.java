@@ -16,18 +16,15 @@ public class Subject {
     //    показать информацию о предмете
     //    получить оценку студента за предмет
 
-
-
     private String name;
     private int countHoursSemester;
     private int countWorkingHoursStudent;
     private int studentAssessmentSubject;
-    private Student[] students = new Student[10];
 
-    public Subject(String name, Groupe groupe, Student student) {
-        int i = 0;
+
+    public Subject(String name, int countHoursSemester) {
         this.name = name;
-        this.students[i++] = student;
+        this.countHoursSemester = countHoursSemester;
     }
 
 
@@ -36,14 +33,27 @@ public class Subject {
     }
 
     public void informationAboutSubject(String name){
-        for (int i = 0; i < students.length; i++) {
-            if (name == students[i].getName()){
-                System.out.println(String.format("name: %s, address: %s, subject: %s", students[i].getName(), students[i].getAddress(), students[i].getSubject()));
-            }
-        }
+        //  System.out.println(String.format("name: %s, address: %s, subject: %s", "1", "1", "1"));
     }
 
     public void studentMarksSubject(){
 
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCountHoursSemester() {
+        return countHoursSemester;
+    }
+
+    public void setCountHoursSemester(int countHoursSemester) {
+        this.countHoursSemester = countHoursSemester;
+    }
+
 }
