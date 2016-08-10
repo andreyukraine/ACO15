@@ -32,7 +32,13 @@ public class Subject {
 
     }
 
-    public void informationAboutSubject(String name){
+    public void informationAboutSubject(String name, Subject[] subjects){
+        for (int i = 0; i < subjects.length ; i++) {
+            if (name == subjects[i].name && subjects[i].name != null){
+                System.out.println(subjects[i].name);
+                break;
+            }
+        }
         //  System.out.println(String.format("name: %s, address: %s, subject: %s", "1", "1", "1"));
     }
 

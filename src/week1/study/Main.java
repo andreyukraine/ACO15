@@ -28,8 +28,8 @@ public class Main {
 
         //student.Study(student);
         //student.removeSubjectLast();
-
-        student.getAverageScoreSubjects();
+        //student.getAverageScoreSubjects();
+        //subject.informationAboutSubject("Java", student.getSubjects());
     }
 
 }
