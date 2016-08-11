@@ -6,6 +6,7 @@ package week1.study;
 public class Groupe {
 
 
+
     private String name;
     private Student[] students = new Student[10];
     int i = 0;
@@ -15,5 +16,12 @@ public class Groupe {
         this.students[i++] = student;
     }
 
+    public Student[] getStudents() {
+        return students;
+    }
+
+    public void setStudents(Student[] students) {
+        this.students = students;
+    }
 
 }

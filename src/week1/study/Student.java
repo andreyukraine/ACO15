@@ -24,7 +24,8 @@ public class Student {
     private String address;
     private Subject[]subjects = new Subject[10];
     int i = 0;
-
+    int countSubject = 0;
+    int scoreSubject = 0;
 
     public Student(String name, String address) {
         this.name = name;
@@ -58,13 +59,23 @@ public class Student {
         }
     }
 
-    public void getAverageScoreSubjects(){
-        for (int j = 0; j < subjects.length; j++) {
-            if (subjects[j] != null){
-                System.out.println(String.format("предмет: %s, количество часов в семестре : %s", subjects[j].getName(), subjects[j].getCountHoursSemester()));
+    public void getAverageScoreSubjects(Student student, Student[] students){
+        int averageSubject = 0;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].getName() == student.getName() && students[i] != null){
+                System.out.println(students[i].getName());
+                for (int j = 0; j < students[i].getSubjects().length ; j++) {
+                    if (students[i].getSubjects()[j].getName() != null) {
+                        scoreSubject += students[i].getSubjects()[j].getStudentAssessmentSubject();
+                        countSubject++;
+
+                    }
+                }
+
             }
         }
-
+        averageSubject = scoreSubject / countSubject;
+        System.out.println(averageSubject);
     }
 
     public String getName() {
