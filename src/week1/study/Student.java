@@ -15,7 +15,7 @@ public class Student {
     //    //добавить предмет
     //    //удалить предмет из списка последний
     //    //показать всю информацию о предметах
-    //    получить средний бал за все предметы
+    //    //получить средний бал за все предметы
 
 
 
@@ -24,8 +24,7 @@ public class Student {
     private String address;
     private Subject[]subjects = new Subject[10];
     int i = 0;
-    int countSubject = 0;
-    int scoreSubject = 0;
+
 
     public Student(String name, String address) {
         this.name = name;
@@ -41,7 +40,6 @@ public class Student {
                     System.out.println("Студент учит предмет " + subjects[i].getName());
                 }
             }
-
         }
     }
 
@@ -55,27 +53,17 @@ public class Student {
                 subjects[j].setName(null);
                 break;
             }
-
         }
     }
 
-    public void getAverageScoreSubjects(Student student, Student[] students){
-        int averageSubject = 0;
-        for (int i = 0; i < students.length; i++) {
-            if (students[i].getName() == student.getName() && students[i] != null){
-                System.out.println(students[i].getName());
-                for (int j = 0; j < students[i].getSubjects().length ; j++) {
-                    if (students[i].getSubjects()[j].getName() != null) {
-                        scoreSubject += students[i].getSubjects()[j].getStudentAssessmentSubject();
-                        countSubject++;
-
-                    }
-                }
-
-            }
+    public void getAverageScoreSubjects(Student student){
+        int countSubject = 0;
+        int scoreSubject = 0;
+        for (int j = 0; (student.getSubjects()[j] != null) && (j < student.getSubjects().length); j++) {
+                scoreSubject += student.getSubjects()[j].getStudentAssessmentSubject();
+                countSubject++;
         }
-        averageSubject = scoreSubject / countSubject;
-        System.out.println(averageSubject);
+        System.out.println(scoreSubject / countSubject);
     }
 
     public String getName() {
