@@ -36,7 +36,7 @@ public class Main {
         //student.getAverageScoreSubjects();
         //subject.informationAboutSubject("Java", student.getSubjects());
         //subject.studentMarksSubject(student, subject, groupe.getStudents(), student.getSubjects());
-        //student.getAverageScoreSubjects(student);
+        student.getAverageScoreSubjects(student);
 
 
 
