@@ -40,7 +40,7 @@ public class Parking {
     }
 
     public void addMotoOnLastFreePlace(Transport transport){
-        if (transport.getTransport() == "bike"){
+        if (transport.getTransport().equals("bike")){
             for (int i = 0; i < places.length ; i++) {
                 if (transport.getTransport() == places[i].transport.getTransport()){
                     System.out.println(i);
@@ -69,7 +69,7 @@ public class Parking {
     }
 
     public void takeBikePlaceNumber(Transport transport){
-        if (transport.getTransport() == "bike"){
+        if (transport.getTransport().equals("bike")){
             for (int i = 0; i < places.length ; i++) {
                 if (transport.getTransport() == places[i].transport.getTransport()){
                     System.out.println(i);
