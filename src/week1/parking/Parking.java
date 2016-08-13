@@ -20,9 +20,9 @@ public class Parking {
     private String working;
 
 
-    public void build(String address, int placesCount, String working){
+    public void build(String address, int placesCount){
         this.address = address;
-        this.working = working;
+        working = workingTime();
         places = new Place[placesCount];
         tickets = new Ticket[1000];
     }
@@ -36,7 +36,7 @@ public class Parking {
         if (day == 1 || day == 7){
             return working = "Закрыто";
         }
-        return working = "Открыто";
+            return working = "Открыто";
     }
 
     public void addMotoOnLastFreePlace(Transport transport){

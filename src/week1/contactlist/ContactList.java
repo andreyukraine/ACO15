@@ -19,26 +19,24 @@ public class ContactList {
         if (contact.name.matches("^\\D*$")){
             contacts[i++] = contact;
         }
-
         return list;
     }
 
     public void removeContact(String cont){
 
         for (int j = 0; j < contacts.length ; j++) {
-            if (cont == (contacts[j].name)){
+            if (cont.equals(contacts[j].name)){
                 contacts[j].name = null;
                 contacts[j].tel = null;
-                break;
+                return;
             }
         }
     }
     public void findContact(String name){
         for (int i = 0; i < contacts.length; i++) {
-            if (name == (contacts[i].name)){
-                System.out.println(contacts[i].name);
-                System.out.println(contacts[i].tel);
-                break;
+            if (name.equals(contacts[i].name)){
+                System.out.println(String.format("name: %s, tel: %s", contacts[i].name, contacts[i].tel));
+                return;
             }
         }
     }
@@ -48,17 +46,17 @@ public class ContactList {
             if (contacts[j] != null) {
                 contacts[j].name = null;
                 contacts[j].tel = null;
-                break;
+                return;
             }
         }
     }
 
     public void updateContactInfo(String name, String newName, String newTel){
         for (int i = 0; i < contacts.length; i++) {
-            if (name == contacts[i].name){
+            if (name.equals(contacts[i].name)){
                 contacts[i].name = newName;
                 contacts[i].tel = newTel;
-                break;
+                return;
             }
         }
     }
