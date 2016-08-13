@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Parking parking = new Parking();
 
-        parking.build("Київ, вул. Старокиївська, 10", 100);
+        parking.build("Київ, вул. Старокиївська, 10", 100, "Открыто");
 
         Driver driver = new Driver();
         driver.init("Oleg","DF121232323");
@@ -31,7 +31,8 @@ public class Main {
 
         //parking.takeBikePlaceNumber(transport1);
         //parking.clearParkingPlaces();
-        parking.showAllInParking();
+        //parking.showAllInParking();
         //parking.changeAddressParking("Киев, ул. Кольцевая дорога 22");
+        parking.workingTime();
     }
 }

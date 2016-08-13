@@ -1,6 +1,12 @@
 package week1.parking;
 
 
+import javafx.scene.chart.PieChart;
+
+import javax.xml.crypto.Data;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by IT on 07.08.2016.
@@ -11,13 +17,26 @@ public class Parking {
     private Ticket[] tickets;
     private int freeTicketIndex;
     private String address;
-    private boolean working;
+    private String working;
 
 
-    public void build(String address, int placesCount){
+    public void build(String address, int placesCount, String working){
         this.address = address;
+        this.working = working;
         places = new Place[placesCount];
         tickets = new Ticket[1000];
+    }
+
+    public String workingTime(){
+        String working = "";
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        if (day == 1 || day == 7){
+            return working = "Закрыто";
+        }
+        return working = "Открыто";
     }
 
     public void addMotoOnLastFreePlace(Transport transport){
